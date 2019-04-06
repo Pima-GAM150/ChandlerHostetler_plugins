@@ -19,21 +19,23 @@ public class DuplicateAndSpace : Editor
                 PrefabUtility.InstantiatePrefab(prefabRoot);
             else
                 for (int i = 0; i < DandS.numberOfDuplications; i++)
-                {
-                    
+                {          
                     DandS.clones.Add(Instantiate(Selection.activeGameObject));
                 }
         }
 
         if (GUILayout.Button("Delete all Clones")) {
 
+            Debug.Log(DandS.clones.Count);
             foreach (GameObject clones in DandS.clones) {
                 DestroyImmediate(clones);
             }
-
-            for (int i = 0; i < DandS.clones.Count; i++)
+            while (DandS.clones.Count > 0)
             {
-                DandS.clones.RemoveAt(i);
+                for (int i = 0; i < DandS.clones.Count; i++)
+                {
+                    DandS.clones.RemoveAt(i);
+                }
             }
 
         }
