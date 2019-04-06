@@ -18,4 +18,18 @@ public class DuplicateAndSpaceObject : MonoBehaviour
         
     }
 
+    public void deleteClones() {
+        foreach (GameObject clones in clones)
+        {
+            DestroyImmediate(clones);
+        }
+        while (clones.Count > 0)
+        {
+            for (int i = 0; i < clones.Count; i++)
+            {
+                clones.RemoveAt(i);
+            }
+        }
+    }
+
 }

@@ -26,17 +26,7 @@ public class DuplicateAndSpace : Editor
 
         if (GUILayout.Button("Delete all Clones")) {
 
-            Debug.Log(DandS.clones.Count);
-            foreach (GameObject clones in DandS.clones) {
-                DestroyImmediate(clones);
-            }
-            while (DandS.clones.Count > 0)
-            {
-                for (int i = 0; i < DandS.clones.Count; i++)
-                {
-                    DandS.clones.RemoveAt(i);
-                }
-            }
+            DandS.deleteClones();
 
         }
     }
