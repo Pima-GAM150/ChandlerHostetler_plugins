@@ -11,7 +11,7 @@ public class DuplicateAndSpace : Editor
         base.OnInspectorGUI();
         DuplicateAndSpaceObject DandS = (DuplicateAndSpaceObject)target;
 
-        if (GUILayout.Button("Duplicate"))
+        if (GUILayout.Button("Duplicate " + DandS.numberOfDuplications + " Times"))
         {
             Object prefabRoot = PrefabUtility.GetCorrespondingObjectFromOriginalSource(Selection.activeGameObject);
 
@@ -21,7 +21,12 @@ public class DuplicateAndSpace : Editor
                 for (int i = 0; i < DandS.numberOfDuplications; i++)
                 {
                     Instantiate(Selection.activeGameObject);
+                    DandS.clones.Add(Instantiate(Selection.activeGameObject));
                 }
+        }
+
+        if (GUILayout.Button("Delete all Clones")) {
+
         }
     }
 
