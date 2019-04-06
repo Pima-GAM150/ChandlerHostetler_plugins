@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class DuplicateAndSpace : MonoBehaviour
+[CustomEditor(typeof(DuplicateAndSpaceObject))]
+public class DuplicateAndSpace : Editor
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnInspectorGUI()
     {
-        
+        base.OnInspectorGUI();
+        DuplicateAndSpaceObject DandS = (DuplicateAndSpaceObject)target;
+
+        if (GUILayout.Button("Duplicate"))
+        {
+            Object prefabRoot = PrefabUtility.GetCorrespondingObjectFromOriginalSource(Selection.activeGameObject);
+
+            if (prefabRoot != null)
+                PrefabUtility.InstantiatePrefab(prefabRoot);
+            else
+                for (int i = 0; i < DandS.numberOfDuplications; i++)
+                {
+                    Instantiate(Selection.activeGameObject);
+                }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
