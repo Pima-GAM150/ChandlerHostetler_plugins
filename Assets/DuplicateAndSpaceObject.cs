@@ -38,7 +38,7 @@ public class DuplicateAndSpaceObject : MonoBehaviour
         mainObject = this.gameObject.transform;
 
         foreach (GameObject clones in clones) {
-            this.transform.position = mainObject.position + mainObject.TransformDirection(new Vector2(0, -1));
+            clones.transform.position = mainObject.TransformDirection(new Vector2(0, -1));
         }
 
 
