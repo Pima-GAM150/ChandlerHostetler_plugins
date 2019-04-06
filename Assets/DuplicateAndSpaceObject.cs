@@ -6,6 +6,7 @@ public class DuplicateAndSpaceObject : MonoBehaviour
 {
     public int numberOfDuplications;
     public List<GameObject> clones;
+    public Transform mainObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class DuplicateAndSpaceObject : MonoBehaviour
     }
 
     public void deleteClones() {
+
         foreach (GameObject clones in clones)
         {
             DestroyImmediate(clones);
@@ -30,6 +32,16 @@ public class DuplicateAndSpaceObject : MonoBehaviour
                 clones.RemoveAt(i);
             }
         }
+    }
+
+    public void stackObjects() {
+        mainObject = this.gameObject.transform;
+
+        foreach (GameObject clones in clones) {
+            this.transform.position = mainObject.position + mainObject.TransformDirection(new Vector2(0, -1));
+        }
+
+
     }
 
 }

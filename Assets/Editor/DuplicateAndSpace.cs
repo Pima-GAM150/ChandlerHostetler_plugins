@@ -29,6 +29,11 @@ public class DuplicateAndSpace : Editor
             DandS.deleteClones();
 
         }
+
+        if (GUILayout.Button("Stack Objects")) {
+            DandS.stackObjects();
+
+        }
     }
 
 }
