@@ -35,10 +35,11 @@ public class DuplicateAndSpaceObject : MonoBehaviour
     }
 
     public void stackObjects() {
-        mainObject = this.gameObject.transform;
+         mainObject = this.gameObject.transform;
 
-        foreach (GameObject clones in clones) {
-            clones.transform.position = mainObject.TransformDirection(new Vector2(0, -1));
+        foreach (GameObject clone in clones) {
+            for (int i = 0;  i< numberOfDuplications; i++)
+            clones[i].transform.position = mainObject.TransformDirection(new Vector2(mainObject.position.x, mainObject.position.y - 1 - i));
         }
 
 
