@@ -41,8 +41,16 @@ public class DuplicateAndSpaceObject : MonoBehaviour
             for (int i = 0;  i< numberOfDuplications; i++)
             clones[i].transform.position = mainObject.TransformDirection(new Vector2(mainObject.position.x, mainObject.position.y - 1 - i));
         }
+    }
 
+    public void arrangeSideways() {
+        mainObject = this.gameObject.transform;
 
+        foreach (GameObject clone in clones)
+        {
+            for (int i = 0; i < numberOfDuplications; i++)
+                clones[i].transform.position = mainObject.TransformDirection(new Vector2(mainObject.position.x + 1 + i, mainObject.position.y));
+        }
     }
 
 }

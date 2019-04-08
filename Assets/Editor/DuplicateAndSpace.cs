@@ -34,6 +34,11 @@ public class DuplicateAndSpace : Editor
             DandS.stackObjects();
 
         }
+        if (GUILayout.Button("Arrange Objects Sideways"))
+        {
+            DandS.arrangeSideways();
+
+        }
     }
 
 }
