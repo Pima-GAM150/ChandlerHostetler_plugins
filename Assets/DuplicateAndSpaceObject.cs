@@ -62,4 +62,17 @@ public class DuplicateAndSpaceObject : MonoBehaviour
         }
     }
 
+    public void pattern()
+    {
+        mainObject = this.gameObject.transform;
+
+        foreach (GameObject clone in clones)
+        {
+            for (int i = 0; i < numberOfDuplications; i++)
+            {
+
+            }
+        }
+    }
+
 }

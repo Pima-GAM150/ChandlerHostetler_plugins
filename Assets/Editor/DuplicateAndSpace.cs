@@ -39,6 +39,11 @@ public class DuplicateAndSpace : Editor
             DandS.arrangeSideways();
 
         }
+
+        if (GUILayout.Button("Pattern")) {
+            DandS.pattern();
+
+        }
     }
 
 }
