@@ -39,9 +39,14 @@ public class DuplicateAndSpace : Editor
             DandS.arrangeSideways();
 
         }
-
-        if (GUILayout.Button("Pattern")) {
+        if (GUILayout.Button("Pattern"))
+        {
             DandS.pattern();
+
+        }
+
+        if (GUILayout.Button("Spiral Pattern")) {
+            DandS.spiralPattern();
 
         }
     }
